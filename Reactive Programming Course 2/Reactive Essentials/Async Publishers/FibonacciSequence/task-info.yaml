@@ -40,14 +40,14 @@ files:
   visible: true
   placeholders:
   - offset: 112
-    length: 32
+    length: 257
     placeholder_text: Flux.error(new ToDoException());
     initial_state:
       length: 32
       offset: 112
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: "Flux.<Long, State>generate(() -> STATE_ONE, ((state,\
       \ sink) -> {\n\t\t\tsink.next(state.value);\n\n\t\t\tif (state.iteration ==\
       \ 19) {\n\t\t\t\tsink.complete();\n\t\t\t}\n\n\t\t\treturn new State(state.iteration\
@@ -66,5 +66,8 @@ files:
     \ class=\"hint\">\n  Используйте Flux.generate(stateSupplier, (state, sink) ->\
     \ state) и .startWith для передачи [0] последовательности\n</div>"
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sat, 17 Dec 2022 19:14:08 UTC
 record: -1

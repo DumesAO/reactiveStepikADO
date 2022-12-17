@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CommonPublishersTask10Tests" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-12-17T19:14:08" hostname="DESKTOP-OKD27UT" time="0.226">
+  <properties/>
+  <testcase name="testSolution()" classname="CommonPublishersTask10Tests" time="0.209"/>
+  <testcase name="testSolution1()" classname="CommonPublishersTask10Tests" time="0.017"/>
+  <system-out><![CDATA[21:14:08.744 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
