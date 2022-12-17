@@ -5,14 +5,14 @@ files:
   visible: true
   placeholders:
   - offset: 162
-    length: 32
+    length: 21
     placeholder_text: Mono.error(new ToDoException());
     initial_state:
       length: 32
       offset: 162
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: flux.next();
   text: "import reactor.core.publisher.Flux;\nimport reactor.core.publisher.Mono;\n\
     \npublic class Task {\n\n\tpublic static Mono<Long> firstFromFlux(Flux<Long> flux)\
@@ -41,5 +41,8 @@ files:
     \   \n<div class=\"hint\">\n  Используйте <code>Flux#next</code> или <code>Flux#single</code>\n\
     </div>"
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sat, 17 Dec 2022 19:38:42 UTC
 record: -1

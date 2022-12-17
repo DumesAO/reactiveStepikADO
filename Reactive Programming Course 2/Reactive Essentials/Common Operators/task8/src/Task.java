@@ -6,6 +6,6 @@ import reactor.core.publisher.Mono;
 public class Task {
 
 	public static Mono<List<String>> transformToList(Flux<String> flux) {
-		return Mono.error(new ToDoException());
+		return flux.collectList();
 	}
 }
