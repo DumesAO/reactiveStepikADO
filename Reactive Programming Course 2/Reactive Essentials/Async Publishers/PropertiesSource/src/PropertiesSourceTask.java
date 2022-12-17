@@ -4,7 +4,7 @@ public class PropertiesSourceTask {
 
 	static Properties settings;
 
-	public static Iterable<Property<?>> createSequence() {
-		return settings.asList();
+	public static Flux<Property<?>> createSequence() {
+		return Flux.defer(() -> Flux.fromIterable(settings.asList()));
 	}
 }

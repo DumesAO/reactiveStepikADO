@@ -56,28 +56,31 @@ files:
   visible: true
   placeholders:
   - offset: 119
-    length: 21
+    length: 17
     placeholder_text: Iterable<Property<?>>
     initial_state:
       length: 21
       offset: 119
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: Flux<Property<?>>
-  - offset: 169
-    length: 18
+  - offset: 165
+    length: 55
     placeholder_text: settings.asList();
     initial_state:
       length: 18
       offset: 169
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: Flux.defer(() -> Flux.fromIterable(settings.asList()));
   text: "import reactor.core.publisher.Flux;\n\npublic class PropertiesSourceTask\
     \ {\n\n\tstatic Properties settings;\n\n\tpublic static Iterable<Property<?>>\
     \ createSequence() {\n\t\treturn settings.asList();\n\t}\n}"
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sat, 17 Dec 2022 18:41:31 UTC
 record: -1

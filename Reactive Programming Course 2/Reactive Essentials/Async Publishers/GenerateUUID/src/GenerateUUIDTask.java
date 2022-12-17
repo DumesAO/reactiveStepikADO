@@ -4,7 +4,7 @@ public class GenerateUUIDTask {
 
 	static UUIDGenerator uuidGenerator;
 
-	public static Mono generateRandomUUID() {
-		return Mono.just(uuidGenerator);
+	public static Mono<String> generateRandomUUID() {
+		return Mono.defer(()->Mono.just(uuidGenerator.secureUUID()));
 	}
 }
