@@ -5,14 +5,14 @@ files:
   visible: true
   placeholders:
   - offset: 140
-    length: 32
+    length: 23
     placeholder_text: Flux.error(new ToDoException());
     initial_state:
       length: 32
       offset: 140
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: stringFlux.takeLast(2);
   text: "import reactor.core.publisher.Flux;\n\npublic class Task {\n\n\tpublic static\
     \ Flux<String> transformSequence(Flux<String> stringFlux) {\n\t\treturn Flux.error(new\
@@ -41,5 +41,8 @@ files:
     з придыдущего\n   \n<div class=\"hint\">\n  Используйте <code>Flux#takeLast</code>\n\
     </div>"
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sat, 17 Dec 2022 19:29:24 UTC
 record: -1
