@@ -5,14 +5,14 @@ files:
   visible: true
   placeholders:
   - offset: 403
-    length: 27
+    length: 389
     placeholder_text: throw new ToDoException());
     initial_state:
       length: 27
       offset: 403
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: "StepVerifier.withVirtualTime(toVerify)\n\t\t     \
       \       .expectSubscription()\n\t\t            .expectNoEvent(Duration.ofDays(5))\n\
       \t\t            .thenAwait(Duration.ofDays(1))\n\t\t            .expectNext(5L)\n\
@@ -44,5 +44,8 @@ files:
     \t\tlatch.countDown();\n\t\t}).start();\n\n\t\tAssertions.assertThat(latch.await(10,\
     \ TimeUnit.SECONDS))\n\t\t          .isTrue();\n\t}\n}"
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sat, 17 Dec 2022 20:01:48 UTC
 record: -1

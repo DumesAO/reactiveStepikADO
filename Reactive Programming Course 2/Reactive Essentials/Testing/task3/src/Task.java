@@ -14,11 +14,27 @@ public class Task {
 
 	static void testSuccessCase(Function<Flux<String>, Flux<Long>> functionToTest) {
 		// produce "1" "2" "100"
-		throw new ToDoException()); // TODO Check Success Case;
+		TestPublisher<String> testPublisher = TestPublisher.create();
+		Flux<Long> result = functionToTest.apply(testPublisher.flux());
+		StepVerifier.create(result)
+				.expectSubscription()
+				.then(() -> testPublisher.next("1", "2", "100"))
+				.expectNext(1L, 2L, 100L)
+				.then(testPublisher::complete)
+				.expectComplete()
+				.verify();
+		// TODO Check Success Case;
 	}
 
 	static void testFailureCase(Function<Flux<String>, Flux<Long>> functionToTest) {
 		// produce non number string and check NumberFormatException is produced
-		throw new ToDoException()); // TODO Check Failure Case;
+		TestPublisher<String> testPublisher = TestPublisher.<String>create();
+		Flux<Long> result = functionToTest.apply(testPublisher.flux());
+		StepVerifier.create(result)
+				.expectSubscription()
+				.then(() -> testPublisher.next("HelloWorld"))
+				.expectError(NumberFormatException.class)
+				.verify();
+
 	}
 }
