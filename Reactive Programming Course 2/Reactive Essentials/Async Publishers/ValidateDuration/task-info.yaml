@@ -27,25 +27,25 @@ files:
 - name: src/ValidationTask.java
   visible: true
   placeholders:
-  - offset: 111
-    length: 7
+  - offset: 147
+    length: 158
     placeholder_text: boolean
     initial_state:
       length: 7
       offset: 111
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: Mono<Void>
-  - offset: 151
-    length: 52
+  - offset: 317
+    length: 31
     placeholder_text: return !duration.isNegative() && !duration.isZero();
     initial_state:
       length: 52
       offset: 151
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: "if (duration.isNegative() || duration.isZero()) {\n\
       \t\t\treturn Mono.error(new IllegalArgumentException(\"Negative or zero duration\"\
       ));\n\t\t} else {\n\t\t\treturn Mono.empty();\n\t\t}"
@@ -53,5 +53,8 @@ files:
     \ class ValidationTask {\n\n\tpublic static boolean validate(Duration duration)\
     \ {\n\t\treturn !duration.isNegative() && !duration.isZero();\n\t}\n}"
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sat, 17 Dec 2022 19:03:52 UTC
 record: -1
