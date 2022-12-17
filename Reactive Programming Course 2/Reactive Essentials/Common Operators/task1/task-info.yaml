@@ -4,15 +4,15 @@ files:
 - name: src/Task.java
   visible: true
   placeholders:
-  - offset: 213
-    length: 32
+  - offset: 212
+    length: 44
     placeholder_text: Flux.error(new ToDoException());
     initial_state:
       length: 32
       offset: 213
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: "Flux.from(publisher)\n\t\t           .map(Objects::toString);"
   text: "import java.util.Objects;\n\nimport org.reactivestreams.Publisher;\nimport\
     \ reactor.core.publisher.Flux;\n\npublic class Task {\n\n\tpublic static <T> Publisher<String>\
@@ -45,5 +45,8 @@ files:
     \ в <code>Flux</code>\n  Используйте <code>Flux#map</code> для преобразований\n\
     </div>"
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sat, 17 Dec 2022 19:17:09 UTC
 record: -1
