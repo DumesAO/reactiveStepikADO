@@ -39,28 +39,32 @@ files:
   visible: true
   placeholders:
   - offset: 123
-    length: 6
+    length: 4
     placeholder_text: String
     initial_state:
       length: 6
       offset: 123
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Failed
     encrypted_possible_answer: Mono<String>
-  - offset: 162
-    length: 27
+  - offset: 160
+    length: 25
     placeholder_text: uuidGenerator.secureUUID();
     initial_state:
       length: 27
       offset: 162
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Failed
     encrypted_possible_answer: Mono.defer(() -> Mono.just(uuidGenerator.secureUUID()));
   text: "import reactor.core.publisher.Mono;\n\npublic class GenerateUUIDTask {\n\n\
     \tstatic UUIDGenerator uuidGenerator;\n\n\tpublic static String generateRandomUUID()\
     \ {\n\t\treturn uuidGenerator.secureUUID();\n\t}\n}"
   learner_created: false
-status: Unchecked
+status: Failed
+feedback:
+  message: 'expectation &quot;expectNext(test-uuid)&quot; failed (expected value:
+    test-uuid; actual value: Mock for UUIDGenerator, hashCode: 43434643)'
+  time: Sat, 17 Dec 2022 18:30:34 UTC
 record: -1

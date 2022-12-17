@@ -44,17 +44,17 @@ files:
   visible: true
   placeholders:
   - offset: 138
-    length: 17
+    length: 13
     placeholder_text: Iterable<Integer>
     initial_state:
       length: 17
       offset: 138
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: Flux<Integer>
-  - offset: 177
-    length: 119
+  - offset: 170
+    length: 27
     placeholder_text: "List<Integer> sequence = new ArrayList<>();\n\t\tfor (int i\
       \ = 0; i < 20; i++) {\n\t\t\tsequence.add(i);\n\t\t}\n\t\treturn sequence;"
     initial_state:
@@ -62,7 +62,7 @@ files:
       offset: 177
     initialized_from_dependency: false
     selected: true
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: return Flux.range(0, 20);
   text: "import reactor.core.publisher.Flux;\nimport java.util.ArrayList;\nimport\
     \ java.util.List;\n\npublic class CreateSequenceTask {\n\n\tpublic static Iterable<Integer>\
@@ -70,5 +70,8 @@ files:
     \ (int i = 0; i < 20; i++) {\n\t\t\tsequence.add(i);\n\t\t}\n\t\treturn sequence;\n\
     \t}\n}"
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sat, 17 Dec 2022 18:27:25 UTC
 record: -1
