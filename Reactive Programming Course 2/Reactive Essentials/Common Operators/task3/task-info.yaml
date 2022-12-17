@@ -5,14 +5,14 @@ files:
   visible: true
   placeholders:
   - offset: 140
-    length: 32
+    length: 80
     placeholder_text: Flux.error(new ToDoException());
     initial_state:
       length: 32
       offset: 140
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: "stringFlux.concatMap(word -> Flux.fromArray(word.split(\"\
       \")))\n\t\t                 .map(letter -> letter.charAt(0));"
   text: "import reactor.core.publisher.Flux;\n\npublic class Task {\n\n\tpublic static\
@@ -45,5 +45,8 @@ files:
     \n  Используйте <code>String#charAt(0)</code> что бы получить единственную бук\
     ву в <code>char</code>\n</div>"
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sat, 17 Dec 2022 19:28:47 UTC
 record: -1
