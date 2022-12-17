@@ -3,7 +3,7 @@ import reactor.core.publisher.Flux;
 public class Task {
 
 	public static Flux<Long> transformSequence(Flux<String> input) {
-		return Flux.error(new ToDoException());
+		return input.transform(Task::validate).transform(Task::doBusinessLogic);
 	}
 
 	private static Flux<Long> doBusinessLogic(Flux<String> flux) {

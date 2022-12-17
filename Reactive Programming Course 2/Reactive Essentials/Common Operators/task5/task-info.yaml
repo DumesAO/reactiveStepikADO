@@ -5,14 +5,14 @@ files:
   visible: true
   placeholders:
   - offset: 133
-    length: 32
+    length: 65
     placeholder_text: Flux.error(new ToDoException());
     initial_state:
       length: 32
       offset: 133
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: "input.transform(Task::validate)\n\t\t            .transform(Task::doBusinessLogic);"
   text: "import reactor.core.publisher.Flux;\n\npublic class Task {\n\n\tpublic static\
     \ Flux<Long> transformSequence(Flux<String> input) {\n\t\treturn Flux.error(new\
@@ -48,5 +48,8 @@ files:
     \   \n<div class=\"hint\">\n  Используйте <code>Flux#transform</code> оператор\
     \ высшего порядка для преобразований над <code>Flux</code> \n</div>"
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sat, 17 Dec 2022 19:33:52 UTC
 record: -1
