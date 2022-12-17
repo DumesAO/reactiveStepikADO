@@ -29,14 +29,14 @@ files:
   visible: true
   placeholders:
   - offset: 172
-    length: 32
+    length: 12
     placeholder_text: Mono.error(new ToDoException());
     initial_state:
       length: 32
       offset: 172
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: flux.then();
   text: "import reactor.core.publisher.Flux;\nimport reactor.core.publisher.Mono;\n\
     \npublic class Task {\n\n\tpublic static Mono<Void> waitUntilFluxCompletion(Flux<Long>\
@@ -47,5 +47,8 @@ files:
   text: "Проигнорируйте все елементы и дождитесь окончания `Flux` не блокируя пото\
     к\n   \n<div class=\"hint\">\n  Используйте <code>Flux#then</code>\n</div>"
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sat, 17 Dec 2022 19:39:50 UTC
 record: -1

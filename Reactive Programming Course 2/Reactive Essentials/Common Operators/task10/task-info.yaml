@@ -5,14 +5,14 @@ files:
   visible: true
   placeholders:
   - offset: 128
-    length: 5
+    length: 17
     placeholder_text: null;
     initial_state:
       length: 5
       offset: 128
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: flux.blockLast();
   text: "import reactor.core.publisher.Flux;\n\npublic class Task {\n\n\tpublic static\
     \ Long transformToImperative(Flux<Long> flux) {\n\t\treturn null;\n\t}\n}"
@@ -39,5 +39,8 @@ files:
     ьте последний елемент \n   \n<div class=\"hint\">\n  Используйте <code>Flux#blockLast</code>\n\
     </div>"
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sat, 17 Dec 2022 19:40:12 UTC
 record: -1
