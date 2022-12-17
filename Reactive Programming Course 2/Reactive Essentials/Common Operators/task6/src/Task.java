@@ -4,6 +4,6 @@ import reactor.core.publisher.Mono;
 public class Task {
 
 	public static Mono<Long> createSequence(Flux<Long> flux) {
-		return Mono.error(new ToDoException());
+		return flux.reduce(Long::sum);
 	}
 }
