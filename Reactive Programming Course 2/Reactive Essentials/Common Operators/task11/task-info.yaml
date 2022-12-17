@@ -5,14 +5,14 @@ files:
   visible: true
   placeholders:
   - offset: 154
-    length: 32
+    length: 262
     placeholder_text: Flux.error(new ToDoException());
     initial_state:
       length: 32
       offset: 154
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: "input.map(i -> i % 3 == 0 ? new IndexedWord(i, \"\
       Fizz\") :\n\t\t\t\tnew IndexedWord(i, \"\"))\n\t\t            .map(iw -> iw.getIndex()\
       \ % 5 == 0 ?\n\t\t\t\t            new IndexedWord(iw.getIndex(), iw.getWord()\
@@ -82,5 +82,8 @@ files:
     \ <code>IndexedWord</code>\n  Используйте последовательность <code>Flux#map</code>\n\
     </div>"
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sat, 17 Dec 2022 19:45:33 UTC
 record: -1

@@ -5,7 +5,11 @@ import reactor.core.publisher.Flux;
 public class Task {
 
 	public static Flux<String> fizzBuzz(Flux<Integer> input) {
-		return Flux.error(new ToDoException());
+		return input.map(i -> i % 3 == 0 ? new IndexedWord(i, "Fizz"):new IndexedWord(i, ""))
+				.map(i -> i.getIndex() % 5 == 0 ?
+						new IndexedWord(i.getIndex(), i.getWord() + "Buzz") : i)
+				.map(iw -> iw.getWord()
+						.isEmpty() ? iw.getIndex() + "" : iw.getWord());
 	}
 
 	static class IndexedWord {

@@ -6,6 +6,10 @@ import reactor.test.StepVerifier;
 public class Task {
 
 	public static void verifyThat10ElementsEmitted(Flux<Integer> flux) {
-		throw new ToDoException()); // use StepVerifier to perform testing
+		StepVerifier.create(flux)
+				.expectSubscription()
+				.expectNextCount(10)
+				.expectComplete()
+				.verify();
 	}
 }

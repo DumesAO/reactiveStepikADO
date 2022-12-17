@@ -24,14 +24,14 @@ files:
   visible: true
   placeholders:
   - offset: 192
-    length: 66
+    length: 113
     placeholder_text: throw new ToDoException()); // use StepVerifier to perform testing
     initial_state:
       length: 66
       offset: 192
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: "StepVerifier.create(flux)\n\t\t            .expectSubscription()\n\
       \t\t            .expectNextCount(10)\n\t\t            .expectComplete()\n\t\t\
       \            .verify(Duration.ofMillis(100));"
@@ -40,5 +40,8 @@ files:
     \ flux) {\n\t\tthrow new ToDoException()); // use StepVerifier to perform testing\n\
     \t}\n}"
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sat, 17 Dec 2022 19:47:15 UTC
 record: -1
