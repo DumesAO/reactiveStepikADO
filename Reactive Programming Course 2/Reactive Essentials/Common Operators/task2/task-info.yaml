@@ -5,14 +5,14 @@ files:
   visible: true
   placeholders:
   - offset: 134
-    length: 32
+    length: 30
     placeholder_text: Flux.error(new ToDoException());
     initial_state:
       length: 32
       offset: 134
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: flux.filter(s -> s.length() > 3);
   text: "import reactor.core.publisher.Flux;\n\npublic class Task {\n\n\tpublic static\
     \ Flux<String> transformSequence(Flux<String> flux) {\n\t\treturn Flux.error(new\
@@ -40,5 +40,8 @@ files:
   text: "Отфильтруйте даный `Flux<String>` по условию длина слова больше 3ех \n  \
     \ \n<div class=\"hint\">\n  Используйте оператор <code>Flux#filter</code>\n</div>"
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sat, 17 Dec 2022 19:20:20 UTC
 record: -1
