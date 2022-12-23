@@ -41,13 +41,13 @@ files:
   visible: true
   placeholders:
   - offset: 281
-    length: 32
+    length: 138
     placeholder_text: Mono.error(new ToDoException());
     initial_state:
       length: 32
       offset: 281
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: "\t\treturn Flux.fromIterable(catalogue.list())\n\t\
       \t           .map(s -> s.searchOne(videoName))\n\t\t           .collectList()\n\
@@ -84,5 +84,5 @@ files:
     \t\tpublic Mono<Video> searchOne(String name) {\n\t\t\treturn (probe = PublisherProbe.of(delegate.searchOne(name))).mono();\n\
     \t\t}\n\t}\n}"
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1

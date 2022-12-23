@@ -5,18 +5,18 @@ files:
   visible: true
   placeholders:
   - offset: 1566
-    length: 13
+    length: 129
     placeholder_text: Flux.never();
     initial_state:
       length: 13
       offset: 1566
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: "input.handle((m, s) -> {\n\t\t\tif (MessageMapper.isTradeMessageType(m))\
       \ {\n\t\t\t\ts.next(MessageMapper.mapToTradeMessage(m));\n\t\t\t}\n\t\t});"
-  - offset: 1744
-    length: 13
+  - offset: 1860
+    length: 37
     placeholder_text: Flux.never();
     initial_state:
       length: 13
@@ -25,14 +25,14 @@ files:
     selected: false
     status: Unchecked
     encrypted_possible_answer: input.map(DomainMapper::mapToDomain);
-  - offset: 1918
-    length: 20
+  - offset: 2058
+    length: 1286
     placeholder_text: return Mono.never();
     initial_state:
       length: 20
       offset: 1918
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: "Sinks.Many<Long> delayNotifier =\n\t\t\t\tSinks.unsafe()\n\
       \t\t\t\t     .many()\n\t\t\t\t     .multicast()\n\t\t\t\t     .onBackpressureBuffer(1,\
@@ -53,14 +53,14 @@ files:
       \t)\n\t\t\t\t\t.doFirst(() -> intervalNotifier.emitNext(0L, FAIL_FAST))\n\t\t\
       \t\t\t.then(Mono.fromRunnable(() -> delayNotifier.emitNext(0L, FAIL_FAST)));\n\
       \t\t\t})\n\t\t\t.then();"
-  - offset: 2045
-    length: 13
+  - offset: 3451
+    length: 434
     placeholder_text: Mono.never();
     initial_state:
       length: 13
       offset: 2045
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: "tradeRepository1\n\t\t\t\t.saveAll(trades)\n\t\t\t\
       \t.timeout(Duration.ofSeconds(1))\n\t\t\t\t.retryWhen(Retry.backoff(100, Duration.ofMillis(100))\n\
@@ -70,8 +70,8 @@ files:
       \ != 11000;\n\t\t\t\t\t                }\n\n\t\t\t\t\t                return\
       \ true;\n\t\t\t\t                }))\n\t\t\t\t.onErrorResume(MongoException.class,\
       \ t -> Mono.empty())\n\t\t\t\t.thenReturn(1);"
-  - offset: 2170
-    length: 13
+  - offset: 3997
+    length: 195
     placeholder_text: Mono.never();
     initial_state:
       length: 13
@@ -433,5 +433,5 @@ files:
     trade.setAmount(1);\n\t\ttrade.setMarket(\"test\");\n\t\ttrade.setPrice(1);\n\t\
     \ttrade.setTimestamp(1);\n\t\treturn trade;\n\t}\n}"
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1

@@ -5,13 +5,13 @@ files:
   visible: true
   placeholders:
   - offset: 306
-    length: 32
+    length: 107
     placeholder_text: Mono.error(new ToDoException());
     initial_state:
       length: 32
       offset: 306
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: "Mono.fromCallable(longRunningCall)\n\t\t         \
       \  .subscribeOn(Schedulers.boundedElastic())\n\t\t           .timeout(duration,\
@@ -43,5 +43,5 @@ files:
       implementation 'io.projectreactor:reactor-core'
     }
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1

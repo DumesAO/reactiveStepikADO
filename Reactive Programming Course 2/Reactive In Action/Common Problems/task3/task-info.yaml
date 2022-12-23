@@ -91,20 +91,20 @@ files:
   visible: true
   placeholders:
   - offset: 279
-    length: 61
+    length: 231
     placeholder_text: // use ExecutorService or Scheduler to offload blocking calls
     initial_state:
       length: 61
       offset: 279
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: "final Scheduler                    blockingTasksScheduler\
       \ =\n\t\t\tSchedulers.newBoundedElastic(ConnectionsPool.instance()\n\t\t\t \
       \                                           .size(),\n\t\t\t\t\tInteger.MAX_VALUE,\n\
       \t\t\t\t\t\"DataBaseBlockingTasksScheduler\");"
-  - offset: 746
-    length: 32
+  - offset: 916
+    length: 105
     placeholder_text: Flux.error(new ToDoException());
     initial_state:
       length: 32
@@ -125,5 +125,5 @@ files:
     \ thread-pool with limited amount of workers\n\t\t//       ThreadCount == ConnectionsPool.size()\n\
     \n\t\treturn Flux.error(new ToDoException());\t}\n}\n"
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1

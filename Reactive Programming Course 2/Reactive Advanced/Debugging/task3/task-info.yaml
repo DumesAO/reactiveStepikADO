@@ -16,23 +16,23 @@ files:
   visible: true
   placeholders:
   - offset: 159
-    length: 25
+    length: 27
     placeholder_text: // TODO scheduler metrics
     initial_state:
       length: 25
       offset: 159
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: Schedulers.enableMetrics();
-  - offset: 203
-    length: 59
+  - offset: 205
+    length: 25
     placeholder_text: // TODO add metrics for flux and name your flux as "MyFlux"
     initial_state:
       length: 59
       offset: 203
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: ".name(\"myFlux\")\n\t\t\t\t.metrics()"
   text: "import reactor.core.publisher.Flux;\nimport reactor.core.scheduler.Schedulers;\n\
@@ -61,5 +61,5 @@ files:
     \t\t\t          .isNotEmpty();\n\t\t} finally {\n\t\t\tHooks.resetOnEachOperator();\n\
     \t\t}\n\t}\n}"
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1

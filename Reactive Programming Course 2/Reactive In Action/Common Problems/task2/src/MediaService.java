@@ -10,6 +10,9 @@ public class MediaService {
 	}
 
 	public Mono<Video> findVideo(String videoName) {
-Mono.error(new ToDoException());
+		return Flux.fromIterable(catalogue.list())
+				.map(s -> s.searchOne(videoName))
+				.collectList()
+				.flatMap(Mono::firstWithSignal);
 	}
 }

@@ -5,13 +5,13 @@ files:
   visible: true
   placeholders:
   - offset: 190
-    length: 32
+    length: 20
     placeholder_text: Flux.error(new ToDoException());
     initial_state:
       length: 32
       offset: 190
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: Flux.merge(sources);
   text: "import org.reactivestreams.Publisher;\nimport reactor.core.publisher.Flux;\n\
@@ -48,5 +48,5 @@ files:
     B\")\n\t\t\t\t.expectNoEvent(Duration.ofSeconds(1))\n\t\t\t\t.expectNext(\"A\"\
     )\n\t\t\t\t.verifyComplete();\n\t}\n}"
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1

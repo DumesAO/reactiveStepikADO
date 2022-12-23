@@ -20,10 +20,51 @@ public class DatabasesIntegration {
 		// TODO: 2) Ensure All transactions are rolled back ion case any of write operations fails
 		// TODO: 3) Ensure Transaction lasts less than 1 sec
 
-		return Mono.error(new ToDoException());
+		return integerFlux
+				.publish(sharedFlux -> {
+					Mono<Result> oracleDbResultTransactionId =
+							dbWriteInTransaction(oracleDb, sharedFlux);
+					Mono<Result> fileDbResultTransactionId = dbWriteInTransaction(fileDb, sharedFlux);
+					return fileDbResultTransactionId
+							.zipWith(oracleDbResultTransactionId)
+							.<Void>flatMap((tuple) -> {
+								Result fileDbResult = tuple.getT1();
+								Result oracleDbResult = tuple.getT2();
+								if (fileDbResult.error() == null && oracleDbResult.error() == null) {
+									return Mono.empty();
+								} else {
+									if (fileDbResult.error() != null && oracleDbResult.error() != null) {
+										Throwable error = fileDbResult.error();
+										error.addSuppressed(oracleDbResult.error());
+										return Mono.error(error);
+									} else if (fileDbResult.error() != null) {
+										long transactionId = oracleDbResult.transactionId();
+										Mono<Void> voidMono = oracleDb.rollbackTransaction(transactionId);
+										return voidMono.then(Mono.error(fileDbResult.error()));
+									} else {
+										long transactionId = fileDbResult.transactionId();
+										Mono<Void> voidMono = fileDb.rollbackTransaction(transactionId);
+										return voidMono.then(Mono.error(oracleDbResult.error()));
+									}
+								}
+							});
+				})
+				.then();
 	}
 
     static Mono<Result> dbWriteInTransaction(DatabaseApi db, Flux<Integer> dataSource) {
-        return Mono.error(new ToDoException());
+        return Mono
+				.usingWhen(
+						db.<Integer>open().retryWhen(Retry.max(10).filter(t -> t instanceof IllegalAccessError)),
+						objectConnection -> objectConnection.write(dataSource),
+						Connection::close,
+						(connection, t) -> connection.rollback()
+								.then(connection.close()),
+						(connection) -> connection.rollback()
+								.then(connection.close())
+				)
+				.map(id -> (Result) new SuccessResult(id))
+				.timeout(Duration.ofMillis(1000))
+				.onErrorResume(throwable -> Mono.<Result>just(new ErrorResult(throwable)));
     }
 }

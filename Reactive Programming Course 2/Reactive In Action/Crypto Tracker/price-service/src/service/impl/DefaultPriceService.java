@@ -47,14 +47,14 @@ public class DefaultPriceService implements PriceService {
 		// TODO: verify that price message are valid
 		// HINT: Use MessageMapper methods to perform filtering and validation
 
-		return Flux.never();
+		return input.filter(m -> MessageMapper.isPriceMessageType(m) && MessageMapper.isValidPriceMessage(m));
 	}
 
 	// Visible for testing
 	Flux<MessageDTO<Float>> tranformToPriceMessageDTO(Flux<Map<String, Object>> input) {
 		// TODO map to Statistic message using MessageMapper.mapToPriceMessage
 
-		return Flux.never();
+		return input.map(MessageMapper::mapToPriceMessage);
 	}
 
 	// 1.1)   TODO Collect crypto currency price during the interval of seconds
@@ -70,6 +70,21 @@ public class DefaultPriceService implements PriceService {
 	Flux<MessageDTO<Float>> averagePrice(Flux<Long> requestedInterval,
 			Flux<MessageDTO<Float>> priceData) {
 
-		return Flux.never();
+		return requestedInterval
+				.startWith(DEFAULT_AVG_PRICE_INTERVAL)
+				.switchMap(timeFrame -> priceData.window(Duration.ofSeconds(timeFrame)).flatMap(this::currencyGroupingLogic));
+	}
+
+	private Flux<MessageDTO<Float>> currencyGroupingLogic(Flux<MessageDTO<Float>> flux) {
+		return flux.groupBy(MessageDTO::getCurrency)
+				.flatMap(gf -> averageProcessingLogic(gf, gf.key()));
+	}
+
+	private Mono<MessageDTO<Float>> averageProcessingLogic(Flux<MessageDTO<Float>> flux,
+														   String currency) {
+		return flux.map(MessageDTO::getData)
+				.reduce(Sum.empty(), Sum::add)
+				.map(Sum::avg)
+				.map(avg -> MessageDTO.avg(avg, currency, "LocalMarketAvg"));
 	}
 }

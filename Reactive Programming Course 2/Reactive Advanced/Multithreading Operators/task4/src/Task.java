@@ -12,8 +12,8 @@ public class Task {
 			Function work1, Function work2) {
 		return flux
 				.map(work1)
-				// fixme
-				// fixme
+				.subscribeOn(Schedulers.single())
+				.publishOn(Schedulers.parallel())
 				.map(work2);
 	}
 }

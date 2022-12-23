@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CPTask1Tests" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-12-23T11:14:17" hostname="DESKTOP-OKD27UT" time="0.619">
+  <properties/>
+  <testcase name="findUsersMostExpensivePurchaseTest()" classname="CPTask1Tests" time="0.615"/>
+  <testcase name="retrievingTotalPriceTest()" classname="CPTask1Tests" time="0.004"/>
+  <system-out><![CDATA[13:14:18.060 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

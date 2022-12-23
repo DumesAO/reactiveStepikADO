@@ -7,6 +7,6 @@ public class Task {
 
 	public static Flux<List<Long>> backpressureByBatching(Flux<Long> upstream,
 			Duration duration) {
-		return Flux.error(new ToDoException());
+		return upstream.buffer(duration);
 	}
 }

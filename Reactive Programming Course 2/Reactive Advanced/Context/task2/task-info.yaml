@@ -5,13 +5,13 @@ files:
   visible: true
   placeholders:
   - offset: 209
-    length: 32
+    length: 44
     placeholder_text: Mono.error(new ToDoException());
     initial_state:
       length: 32
       offset: 209
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: source.contextWrite(Context.of(key, value));
   text: "import reactor.core.publisher.Mono;\nimport reactor.util.context.Context;\n\
@@ -36,5 +36,5 @@ files:
       implementation 'io.projectreactor:reactor-core'
     }
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1

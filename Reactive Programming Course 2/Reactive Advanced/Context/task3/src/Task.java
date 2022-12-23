@@ -8,6 +8,6 @@ public class Task {
 			Context contextA,
 			Publisher<String> sourceB,
 			Context contextB) {
-		return Flux.from(sourceA).mergeWith(sourceB);
+		return Flux.from(sourceA).subscriberContext(contextA).mergeWith(Flux.from(sourceB).subscriberContext(contextB));
 	}
 }

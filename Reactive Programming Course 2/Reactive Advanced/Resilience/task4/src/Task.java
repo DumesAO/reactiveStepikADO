@@ -8,6 +8,6 @@ public class Task {
 
 	public static Publisher<String> timeoutLongOperation(CompletableFuture<String> longRunningCall,
 			Duration duration, String fallback) {
-		return Mono.error(new ToDoException());
+		return Mono.fromFuture(longRunningCall).timeout(duration,Mono.just(fallback));
 	}
 }

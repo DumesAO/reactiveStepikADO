@@ -9,6 +9,6 @@ public class Task {
 	public static Mono<String> timeoutBlockingOperation(Callable<String> longRunningCall,
 			Duration duration,
 			String fallback) {
-		return Mono.error(new ToDoException());
+		return Mono.fromCallable(longRunningCall).subscribeOn(Schedulers.elastic()).timeout(duration,Mono.just(fallback));
 	}
 }

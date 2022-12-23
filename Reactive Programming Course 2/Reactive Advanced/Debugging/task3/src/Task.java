@@ -4,9 +4,9 @@ import reactor.core.scheduler.Schedulers;
 public class Task {
 
 	public static Flux<Long> metricsTask(Flux<Long> flux) {
-		// TODO scheduler metrics
+		Schedulers.enableMetrics();
 		return flux
-				// TODO add metrics for flux and name your flux as "MyFlux"
+				.name("MyFlux").metrics()
 				.subscribeOn(Schedulers.parallel())
 				.publishOn(Schedulers.single())
 				.log("After PublisherOn");

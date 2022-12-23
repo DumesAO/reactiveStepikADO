@@ -12,7 +12,7 @@ files:
       offset: 213
     initialized_from_dependency: false
     selected: true
-    status: Solved
+    status: Unchecked
     encrypted_possible_answer: "Flux.from(publisher)\n\t\t           .map(Objects::toString);"
   text: "import java.util.Objects;\n\nimport org.reactivestreams.Publisher;\nimport\
     \ reactor.core.publisher.Flux;\n\npublic class Task {\n\n\tpublic static <T> Publisher<String>\

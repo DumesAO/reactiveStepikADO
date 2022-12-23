@@ -5,13 +5,13 @@ files:
   visible: true
   placeholders:
   - offset: 198
-    length: 32
+    length: 21
     placeholder_text: Flux.error(new ToDoException());
     initial_state:
       length: 32
       offset: 198
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: Flux.concat(sources);
   text: "import org.reactivestreams.Publisher;\nimport reactor.core.publisher.Flux;\n\
@@ -64,5 +64,5 @@ files:
     </div>
     </html>
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1

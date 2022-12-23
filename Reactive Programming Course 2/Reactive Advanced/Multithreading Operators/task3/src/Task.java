@@ -5,6 +5,6 @@ import reactor.core.scheduler.Schedulers;
 public class Task {
 
 	public static ParallelFlux<Integer> paralellizeWorkOnDifferentThreads(Flux<Integer> source) {
-		return ParallelFlux.from(Flux.error(new ToDoException()));
+		return source.parallel().runOn(Schedulers.parallel());
 	}
 }

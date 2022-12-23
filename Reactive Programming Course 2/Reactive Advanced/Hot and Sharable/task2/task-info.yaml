@@ -5,23 +5,23 @@ files:
   visible: true
   placeholders:
   - offset: 373
-    length: 49
+    length: 35
     placeholder_text: Flux.error(new ToDoException()); // With Operator
     initial_state:
       length: 49
       offset: 373
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: "coldSource.replay(3)\n\t\t                 .autoConnect();"
-  - offset: 593
-    length: 50
+  - offset: 579
+    length: 540
     placeholder_text: Flux.error(new ToDoException()); // With Processor
     initial_state:
       length: 50
       offset: 593
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: "\t\tfinal Disposable subscribe = coldSource.subscribe(\n\
       \t\t\t\tnextElement -> replaySink.emitNext(nextElement, EmitFailureHandler.FAIL_FAST),\n\
@@ -91,5 +91,5 @@ files:
       implementation 'io.projectreactor:reactor-core'
     }
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1

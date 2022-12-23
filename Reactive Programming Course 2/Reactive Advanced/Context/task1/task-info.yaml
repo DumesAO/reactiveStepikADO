@@ -5,13 +5,13 @@ files:
   visible: true
   placeholders:
   - offset: 137
-    length: 32
+    length: 98
     placeholder_text: Mono.error(new ToDoException());
     initial_state:
       length: 32
       offset: 137
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: "Mono.deferContextual(contextView ->\n\t\t\tcontextView.hasKey(key)\n\
       \t\t\t\t? Mono.just(contextView.get(key))\n\t\t\t\t: Mono.empty()\n\t\t);"
@@ -35,5 +35,5 @@ files:
       implementation 'io.projectreactor:reactor-core'
     }
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1

@@ -12,7 +12,7 @@ files:
       offset: 134
     initialized_from_dependency: false
     selected: true
-    status: Solved
+    status: Unchecked
     encrypted_possible_answer: flux.filter(s -> s.length() > 3);
   text: "import reactor.core.publisher.Flux;\n\npublic class Task {\n\n\tpublic static\
     \ Flux<String> transformSequence(Flux<String> flux) {\n\t\treturn Flux.error(new\

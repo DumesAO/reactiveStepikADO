@@ -8,6 +8,6 @@ import reactor.core.publisher.Flux;
 public class Task {
 
 	public static Publisher<String> readFile(String filename) {
-		return Flux.error(new ToDoException());
+		return Flux.using(() -> Files.lines(Paths.get(filename)), Flux::fromStream, Stream::close);
 	}
 }

@@ -36,7 +36,7 @@ files:
       offset: 172
     initialized_from_dependency: false
     selected: false
-    status: Solved
+    status: Unchecked
     encrypted_possible_answer: flux.then();
   text: "import reactor.core.publisher.Flux;\nimport reactor.core.publisher.Mono;\n\
     \npublic class Task {\n\n\tpublic static Mono<Void> waitUntilFluxCompletion(Flux<Long>\

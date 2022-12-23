@@ -5,13 +5,13 @@ files:
   visible: true
   placeholders:
   - offset: 328
-    length: 32
+    length: 488
     placeholder_text: new BaseSubscriber<String>() {};
     initial_state:
       length: 32
       offset: 328
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: "source.subscribe(new BaseSubscriber<String>() {\n\n\
       \t\t\tlong requested = 1;\n\t\t\tlong counter = 0;\n\n\t\t\t@Override\n\t\t\t\
@@ -49,5 +49,5 @@ files:
       implementation 'io.projectreactor:reactor-core'
     }
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1

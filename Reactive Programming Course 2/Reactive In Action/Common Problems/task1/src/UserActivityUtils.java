@@ -6,6 +6,15 @@ public class UserActivityUtils {
 	public static Mono<Product> findMostExpansivePurchase(Flux<Order> ordersHistory,
 			ProductsCatalog productsCatalog) {
 
-		return Mono.error(new ToDoException());
+		return ordersHistory.flatMapIterable(Order::getProductsIds)
+				.map(productsCatalog::findById)
+				.reduce((product, product2) -> {
+					if (product.getPrice() > product2.getPrice()) {
+						return product;
+					}
+					else {
+						return product2;
+					}
+				});
 	}
 }

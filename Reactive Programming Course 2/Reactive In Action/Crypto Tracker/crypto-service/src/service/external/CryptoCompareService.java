@@ -35,12 +35,15 @@ public class CryptoCompareService implements CryptoService {
 
     // TODO: implement resilience such as retry with delay
     public static <T> Flux<T> provideResilience(Flux<T> input) {
-        return Flux.never();
+        return input.retryWhen(
+                Retry.backoff(100, Duration.ofMillis(50))
+                        .maxBackoff(Duration.ofMillis(1000))
+        );
     }
 
 
     // TODO: implement caching of 3 last elements & multi subscribers support
     public static <T> Flux<T> provideCaching(Flux<T> input) {
-        return Flux.never();
+        return input.replay(CACHE_SIZE).autoConnect(0);
     }
 }

@@ -5,13 +5,13 @@ files:
   visible: true
   placeholders:
   - offset: 248
-    length: 51
+    length: 47
     placeholder_text: ParallelFlux.from(Flux.error(new ToDoException()));
     initial_state:
       length: 51
       offset: 248
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: "source.parallel()\n\t\t             .runOn(Schedulers.parallel());"
   text: "import reactor.core.publisher.Flux;\nimport reactor.core.publisher.ParallelFlux;\n\
@@ -45,5 +45,5 @@ files:
       implementation 'io.projectreactor:reactor-core'
     }
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1

@@ -18,7 +18,9 @@ public class Order {
 	}
 
 	public Mono<Long> getTotalPrice() {
-		return Mono.error(new ToDoException());
+		return Flux.fromIterable(productsIds)
+				.map(productsCatalog::findById)
+				.reduce(0L, (sum, product) -> sum + product.getPrice());
 	}
 
 	public String getId() {

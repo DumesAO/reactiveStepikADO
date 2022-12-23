@@ -11,6 +11,10 @@ public class Task {
 			Function<Integer,
 			Integer> mapping) {
 
-		return Flux.error(new ToDoException());
+		return values.handle((integer, integerSynchronousSink) -> {
+			if (integer != 0) {
+				integerSynchronousSink.next(mapping.apply(integer));
+			}
+		});
 	}
 }

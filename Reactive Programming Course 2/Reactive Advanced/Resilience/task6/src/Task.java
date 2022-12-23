@@ -7,6 +7,6 @@ public class Task {
 
 	public static Publisher<Integer> provideSupportOfContinuation(Flux<Integer> values,
 			BiConsumer<Throwable, Object> consumer) {
-		return Flux.error(new ToDoException());
+		return values.onErrorContinue(consumer);
 	}
 }

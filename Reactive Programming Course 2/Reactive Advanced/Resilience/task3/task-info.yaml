@@ -22,8 +22,8 @@ files:
 - name: src/Task.java
   visible: true
   placeholders:
-  - offset: 238
-    length: 32
+  - offset: 237
+    length: 19
     placeholder_text: Mono.error(new ToDoException());
     initial_state:
       length: 32
@@ -38,5 +38,5 @@ files:
     \ Task {\n\n\tpublic static Publisher<String> retryOnError(Mono<String> publisher)\
     \ {\n\t\treturn Mono.error(new ToDoException());\n\t}\n}"
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1

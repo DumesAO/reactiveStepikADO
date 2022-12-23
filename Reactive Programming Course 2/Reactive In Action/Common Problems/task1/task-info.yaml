@@ -32,14 +32,14 @@ files:
   visible: true
   placeholders:
   - offset: 237
-    length: 32
+    length: 257
     placeholder_text: Mono.error(new ToDoException());
     initial_state:
       length: 32
       offset: 237
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: "ordersHistory.flatMapIterable(Order::getProductsIds)\n\
       \t\t                    .map(productsCatalog::findById)\n\t\t              \
       \      .reduce((product, product2) -> {\n\t\t\t                    if (product.getPrice()\
@@ -56,14 +56,14 @@ files:
   visible: true
   placeholders:
   - offset: 659
-    length: 32
+    length: 127
     placeholder_text: Mono.error(new ToDoException());
     initial_state:
       length: 32
       offset: 659
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: "Flux.fromIterable(productsIds)\n\t\t           .map(productsCatalog::findById)\n\
       \t\t           .reduce(0L, (summ, product2) -> summ + product2.getPrice());"
   text: "import java.util.Objects;\n\nimport reactor.core.publisher.Flux;\nimport\
@@ -163,5 +163,8 @@ files:
       implementation 'io.projectreactor:reactor-core'
     }
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Fri, 23 Dec 2022 11:14:18 UTC
 record: -1

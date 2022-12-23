@@ -7,6 +7,10 @@ public class ReactivePaymentsHistoryJpaRepositoryAdapter
 
 	final PaymentsHistoryJpaRepository repository;
 	// use ExecutorService or Scheduler to offload blocking calls
+	final Scheduler tasksScheduler = Schedulers.newBoundedElastic(ConnectionsPool.instance()
+							.size(),
+					Integer.MAX_VALUE,
+					"DataBaseBlockingTasksScheduler");
 
 	public ReactivePaymentsHistoryJpaRepositoryAdapter(PaymentsHistoryJpaRepository repository) {
 		this.repository = repository;
@@ -17,5 +21,6 @@ public class ReactivePaymentsHistoryJpaRepositoryAdapter
 		// HINT: Consider provide custom singleton thread-pool with limited amount of workers
 		//       ThreadCount == ConnectionsPool.size()
 
-		return Flux.error(new ToDoException());	}
+		return Flux.defer(() -> Flux.fromIterable(repository.findAllByUserId(userId)))
+				.subscribeOn(tasksScheduler);	}
 }

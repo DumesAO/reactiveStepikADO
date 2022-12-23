@@ -5,6 +5,6 @@ import reactor.core.publisher.Flux;
 public class Task {
 
 	public static Publisher<String> transformToHotUsingProcessor(Flux<String> coldSource) {
-		return Flux.error(new ToDoException());
+		return coldSource.subscribeWith(DirectProcessor.create());
 	}
 }

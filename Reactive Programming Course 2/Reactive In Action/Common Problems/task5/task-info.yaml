@@ -130,14 +130,14 @@ files:
   visible: true
   placeholders:
   - offset: 709
-    length: 32
+    length: 1314
     placeholder_text: Mono.error(new ToDoException());
     initial_state:
       length: 32
       offset: 709
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Failed
     encrypted_possible_answer: "integerFlux\n\t\t\t.publish(sharedFlux -> {\n\n\t\t\
       \t\tMono<Result> oracleDbResultTransactionId =\n\t\t\t\t\t\tdbWriteInTransaction(oracleDb,\
       \ sharedFlux);\n\t\t\t\tMono<Result> fileDbResultTransactionId = dbWriteInTransaction(fileDb,\
@@ -164,15 +164,15 @@ files:
       \                          return voidMono.then(Mono.error(oracleDbResult.error()));\n\
       \t\t                        }\n\t\t                    }\n\t\t             \
       \   });\n\n\t\t\t\treturn result;\n\t\t\t})\n\t\t\t.then();"
-  - offset: 850
-    length: 32
+  - offset: 2132
+    length: 534
     placeholder_text: Mono.error(new ToDoException());
     initial_state:
       length: 32
       offset: 850
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Failed
     encrypted_possible_answer: "Mono\n\t\t        .usingWhen(\n\t\t              \
       \  db.<Integer>open().retryWhen(Retry.max(10).filter(t -> t instanceof IllegalAccessError)),\n\
       \t\t                objectConnection -> objectConnection.write(dataSource),\n\
@@ -202,5 +202,17 @@ files:
     \tpublic <T> Mono<Connection<T>> open();\n\n\tpublic Mono<Void> rollbackTransaction(long\
     \ id);\n}\n"
   learner_created: false
-status: Unchecked
+status: Failed
+feedback:
+  message: |2+
+
+    Wanted but not invoked:
+    databaseApi.rollbackTransaction(1L);
+    -&gt; at CPTask5Tests.ensureItRollbacksEverythingInCaseOfErrorInOne(CPTask5Tests.java:123)
+
+    However, there was exactly 1 interaction with this mock:
+    databaseApi.open();
+    -&gt; at DatabasesIntegration.dbWriteInTransaction(DatabasesIntegration.java:58)
+
+  time: Fri, 23 Dec 2022 11:41:54 UTC
 record: -1

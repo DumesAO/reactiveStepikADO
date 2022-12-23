@@ -10,6 +10,10 @@ public class Task {
 
 	public static Publisher<String> paralellizeLongRunningWorkOnUnboundedAmountOfThread(
 			Flux<Callable<String>> streamOfLongRunningSources) {
-		return Flux.error(new ToDoException());
+
+		Scheduler scheduler = Schedulers.newBoundedElastic(256,
+				Integer.MAX_VALUE,
+				"scheduler");
+		return streamOfLongRunningSources.flatMap(i -> Mono.fromCallable(i).subscribeOn(scheduler));
 	}
 }

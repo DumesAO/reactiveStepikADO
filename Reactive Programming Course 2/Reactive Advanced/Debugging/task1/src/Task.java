@@ -10,12 +10,12 @@ import reactor.core.publisher.Mono;
 public class Task {
 
 	public static Flux<Long> checkAndDebug(Flux<Long> flux) {
-		BlockHound.install(/*Add BlockHound fix*/);
-		// 1) Add Better error printing
+		BlockHound.install(new MyBlockHoundIntegration());
+		Hooks.onOperatorDebug();
 		return flux
-				// FIXME
-				.scan(0L, (aLong, aLong2) -> (aLong + aLong2 + 2 * aLong) / aLong2)
-				// FIXME
+				.filter(i -> i != 0)
+				.scan(0L, (i, j) -> (i + j + 2 * i) / j)
+				.filter(i -> i != 0)
 				.flatMap(Task::doWork)
 				.log()
 				.retry(5);
@@ -27,7 +27,13 @@ public class Task {
 				   .map(t2 -> t2.getT1() / t2.getT2());
 	}
 
-	// Add BlockHound Integration
+	public static class MyBlockHoundIntegration implements BlockHoundIntegration {
+
+		@Override
+		public void applyTo(BlockHound.Builder builder) {
+			builder.allowBlockingCallsInside(MyCallable.class.getName(), "call");
+		}
+	}
 
 	public static class MyCallable implements Callable<Long> {
 

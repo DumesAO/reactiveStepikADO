@@ -67,7 +67,7 @@ public class ApplicationRunner {
 			NettyUtils.prepareInput(req)
 			          .name("My Lovely Flux 1")
 			          .tag("My Super Important Key", "My Super Important Value")
-			          // TODO Enable stream metrics
+					.metrics()
 			          .doOnNext(inMessage -> logger.info("[WS] >> " + inMessage))
 			          .transform(ApplicationRunner::handleRequestedAveragePriceIntervalValue)
 			          .transform(handler::handle)
@@ -81,7 +81,15 @@ public class ApplicationRunner {
 	public static Flux<Long> handleRequestedAveragePriceIntervalValue(Flux<String> requestedInterval) {
 		// TODO: input may be incorrect, pass only correct interval
 		// TODO: ignore invalid values (empty, non number, <= 0, > 60)
-		return Flux.never();
+		return requestedInterval
+				.handle((s, sink) -> {
+					try {
+						long value = Long.parseLong(s);
+						if (value > 0 && value <=60) {
+							sink.next(value);
+						}
+					} catch (NumberFormatException ignored) {}
+				});
 	}
 
 	// Visible for testing
@@ -90,7 +98,7 @@ public class ApplicationRunner {
 		// It is possible that writing data to output may be slower than rate of
 		// incoming output data
 
-		return outgoingStream; // TODO Enable Backpressure
+		return outgoingStream.onBackpressureBuffer();
 	}
 
 

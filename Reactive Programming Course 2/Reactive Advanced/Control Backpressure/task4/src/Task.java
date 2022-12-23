@@ -8,6 +8,6 @@ public class Task {
 	public static Flux<StatisticSnapshot> keepBackpressureForLongRunningOps(Flux<String> queryFlux,
 			Function<String, Mono<StatisticSnapshot>> calculateStatistic) {
 
-		return Flux.error(new ToDoException());
+		return queryFlux.onBackpressureLatest().concatMap(calculateStatistic,1);
 	}
 }

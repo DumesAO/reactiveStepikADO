@@ -5,7 +5,16 @@ public class Task {
 	public static Flux<IceCreamBall> fillIceCreamWaffleBowl(Flux<IceCreamType> clientPreferences,
 			Flux<IceCreamBall> vanillaIceCreamStream,
 			Flux<IceCreamBall> chocolateIceCreamStream) {
-		return Flux.error(new ToDoException());
+		return clientPreferences.switchMap(type -> {
+			switch (type) {
+				case VANILLA:
+					return vanillaIceCreamStream;
+				case CHOCOLATE:
+					return chocolateIceCreamStream;
+				default:
+					return Flux.error(new IllegalArgumentException());
+			}
+		});
 	}
 
 	static class IceCreamBall {

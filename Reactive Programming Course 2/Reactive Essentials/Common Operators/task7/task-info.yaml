@@ -12,7 +12,7 @@ files:
       offset: 162
     initialized_from_dependency: false
     selected: true
-    status: Solved
+    status: Unchecked
     encrypted_possible_answer: flux.next();
   text: "import reactor.core.publisher.Flux;\nimport reactor.core.publisher.Mono;\n\
     \npublic class Task {\n\n\tpublic static Mono<Long> firstFromFlux(Flux<Long> flux)\

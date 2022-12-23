@@ -6,6 +6,6 @@ public class Task {
 	public static Mono<String> provideCorrectContext(Mono<String> source,
 			Object key,
 			Object value) {
-		return Mono.error(new ToDoException());
+		return source.contextWrite(Context.of(key, value));
 	}
 }

@@ -39,7 +39,7 @@ files:
   visible: true
   placeholders:
   - offset: 229
-    length: 32
+    length: 52
     placeholder_text: Flux.error(new ToDoException());
     initial_state:
       length: 32
@@ -53,5 +53,5 @@ files:
     \ Publisher<String> transformToHot2(Flux<String> coldSource) {\n\t\treturn Flux.error(new\
     \ ToDoException());\n\t}\n}"
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1

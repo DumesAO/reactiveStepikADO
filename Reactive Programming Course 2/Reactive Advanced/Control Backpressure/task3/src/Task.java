@@ -6,6 +6,6 @@ public class Task {
 
 	public static Flux<String> backpressureByBatching(Flux<Long> upstream,
 			Duration duration) {
-		return Flux.error(new ToDoException());
+		return upstream.window(duration).flatMap(i -> i.reduce("", (j, n) -> j + n));
 	}
 }

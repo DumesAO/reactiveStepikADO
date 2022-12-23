@@ -12,7 +12,7 @@ files:
       offset: 163
     initialized_from_dependency: false
     selected: true
-    status: Solved
+    status: Unchecked
     encrypted_possible_answer: flux.reduce(Long::sum);
   text: "import reactor.core.publisher.Flux;\nimport reactor.core.publisher.Mono;\n\
     \npublic class Task {\n\n\tpublic static Mono<Long> createSequence(Flux<Long>\

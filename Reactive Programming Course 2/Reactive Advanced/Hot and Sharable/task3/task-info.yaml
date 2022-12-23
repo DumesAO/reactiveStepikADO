@@ -4,14 +4,14 @@ files:
 - name: src/Task.java
   visible: true
   placeholders:
-  - offset: 241
-    length: 32
+  - offset: 240
+    length: 52
     placeholder_text: Flux.error(new ToDoException());
     initial_state:
       length: 32
       offset: 241
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: coldSource.subscribeWith(DirectProcessor.create());
   text: "import org.reactivestreams.Publisher;\nimport reactor.core.publisher.DirectProcessor;\n\
@@ -43,5 +43,5 @@ files:
       implementation 'io.projectreactor:reactor-core'
     }
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1

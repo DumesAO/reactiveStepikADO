@@ -7,6 +7,6 @@ public class Task {
 	public static Publisher<String> zipSeveralSources(Publisher<String> prefixPublisher,
 			Publisher<String> wordPublisher,
 			Publisher<String> suffixPublisher) {
-		return Flux.error(new ToDoException());
+		return Flux.zip(prefixPublisher,wordPublisher,suffixPublisher).map(TupleUtils.function((p,w,s)->p+w+s));
 	}
 }

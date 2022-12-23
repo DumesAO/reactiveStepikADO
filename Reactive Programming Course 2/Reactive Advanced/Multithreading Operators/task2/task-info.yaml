@@ -4,14 +4,14 @@ files:
 - name: src/Task.java
   visible: true
   placeholders:
-  - offset: 285
-    length: 32
+  - offset: 321
+    length: 65
     placeholder_text: Mono.error(new ToDoException());
     initial_state:
       length: 32
       offset: 285
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: "Mono.fromCallable(blockingCall)\n\t\t           .subscribeOn(Schedulers.single());"
   text: "import java.util.concurrent.Callable;\n\nimport org.reactivestreams.Publisher;\n\
@@ -39,5 +39,5 @@ files:
       implementation 'io.projectreactor:reactor-core'
     }
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1

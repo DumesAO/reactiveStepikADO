@@ -5,13 +5,13 @@ files:
   visible: true
   placeholders:
   - offset: 303
-    length: 32
+    length: 97
     placeholder_text: Flux.error(new ToDoException());
     initial_state:
       length: 32
       offset: 303
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: "Flux.zip(prefixPublisher, wordPublisher, suffixPublisher)\n\
       \t\t           .map(TupleUtils.function((prefix, word, suffix) -> prefix + word\
@@ -46,5 +46,5 @@ files:
       implementation 'io.projectreactor.addons:reactor-extra'
     }
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1

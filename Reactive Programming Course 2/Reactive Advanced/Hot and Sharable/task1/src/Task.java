@@ -4,6 +4,6 @@ import reactor.core.publisher.Flux;
 public class Task {
 
 	public static Publisher<String> transformToHotWithOperator(Flux<String> coldSource) {
-		return Flux.error(new ToDoException());
+		return coldSource.publish().refCount(3);
 	}
 }

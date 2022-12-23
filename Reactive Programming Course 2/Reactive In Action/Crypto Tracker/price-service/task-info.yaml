@@ -14,7 +14,7 @@ files:
   visible: true
   placeholders:
   - offset: 1825
-    length: 13
+    length: 95
     placeholder_text: Flux.never();
     initial_state:
       length: 13
@@ -24,8 +24,8 @@ files:
     status: Unchecked
     encrypted_possible_answer: input.filter(m -> MessageMapper.isPriceMessageType(m)
       && MessageMapper.isValidPriceMessage(m));
-  - offset: 2036
-    length: 13
+  - offset: 2118
+    length: 44
     placeholder_text: Flux.never();
     initial_state:
       length: 13
@@ -34,14 +34,14 @@ files:
     selected: false
     status: Unchecked
     encrypted_possible_answer: input.map(MessageMapper::mapToPriceMessage);
-  - offset: 2760
-    length: 13
+  - offset: 2873
+    length: 656
     placeholder_text: Flux.never();
     initial_state:
       length: 13
       offset: 2760
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: "requestedInterval\n\t\t\t\t.startWith(DEFAULT_AVG_PRICE_INTERVAL)\n\
       \t\t\t\t.switchMap(timeFrame ->\n\t\t\t\t\tpriceData.window(Duration.ofSeconds(timeFrame))\n\
@@ -174,5 +174,5 @@ files:
     \ expectedPrice(float v) {\n        return m -> (Math.abs(m - v) < 0.0001);\n\
     \    }\n}"
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1

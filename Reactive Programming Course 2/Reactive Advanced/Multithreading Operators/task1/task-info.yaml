@@ -5,7 +5,7 @@ files:
   visible: true
   placeholders:
   - offset: 236
-    length: 32
+    length: 40
     placeholder_text: Flux.error(new ToDoException());
     initial_state:
       length: 32
@@ -39,5 +39,5 @@ files:
       implementation 'io.projectreactor:reactor-core'
     }
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1

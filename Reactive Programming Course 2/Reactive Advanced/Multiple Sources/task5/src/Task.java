@@ -9,15 +9,24 @@ import reactor.util.function.Tuples;
 public class Task {
 
 	public static Publisher<Tuple2<Character, Integer>> groupWordsByFirstLatter(Flux<String> words) {
-		return Flux.error(new ToDoException());
+		return words.transform(Task::groupByFirstLetter).transform(Task::countLettersInWordsInGroup);
 	}
 
 	public static Flux<GroupedFlux<Character, String>> groupByFirstLetter(Flux<String> words) {
-		return Flux.error(new ToDoException());
+		return words.groupBy(i-> i.charAt(0));
 	}
 
 	public static Flux<Tuple2<Character, Integer>> countLettersInWordsInGroup(Flux<GroupedFlux<Character,
 			String>> groupedWords) {
-		return Flux.error(new ToDoException());
+		return groupedWords.flatMap(w-> w.map(s -> {
+							int count = 0;
+							for (char c: s.toCharArray()) {
+								if (c == w.key()) {
+									count++;
+								}
+							}
+							return count;
+						}).collect(Collectors.summingInt(Integer::intValue)).map(i -> Tuples.of(w.key(), i))
+				);
 	}
 }

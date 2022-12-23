@@ -15,17 +15,17 @@ files:
   visible: true
   placeholders:
   - offset: 249
-    length: 39
+    length: 6
     placeholder_text: // TODO add log here. Log only requests
     initial_state:
       length: 39
       offset: 249
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: .log("Before PublishOn", Level.INFO, SignalType.REQUEST)
-  - offset: 364
-    length: 27
+  - offset: 331
+    length: 7
     placeholder_text: ";\n\t\t\t\t// TODO add log here."
     initial_state:
       length: 27
@@ -57,5 +57,5 @@ files:
     FluxLog\");\n\t\t\t          });\n\t\t} finally {\n\t\t\tHooks.resetOnEachOperator();\n\
     \t\t}\n\t}\n}"
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1

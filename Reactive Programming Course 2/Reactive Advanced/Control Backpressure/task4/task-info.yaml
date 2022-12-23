@@ -5,13 +5,13 @@ files:
   visible: true
   placeholders:
   - offset: 305
-    length: 32
+    length: 65
     placeholder_text: Flux.error(new ToDoException());
     initial_state:
       length: 32
       offset: 305
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: "queryFlux\n\t\t\t\t.onBackpressureLatest()\n\t\t\t\
       \t.concatMap(calculateStatistic, 1);"
@@ -64,5 +64,5 @@ files:
 
     }
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1

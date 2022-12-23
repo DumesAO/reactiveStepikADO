@@ -7,6 +7,6 @@ public class Task {
 			Publisher<String> wordPublisher,
 			Publisher<String> suffixPublisher) {
 
-		return Flux.error(new ToDoException());
+		return Flux.combineLatest((i)->""+i[0]+i[1]+i[2],prefixPublisher,wordPublisher,suffixPublisher);
 	}
 }

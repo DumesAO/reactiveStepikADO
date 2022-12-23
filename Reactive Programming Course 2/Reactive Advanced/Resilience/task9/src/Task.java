@@ -8,6 +8,6 @@ public class Task {
 
 	public static Publisher<String> timeoutOnce(Flux<String> flux,
 			Duration duration, String fallback) {
-		return Mono.error(new ToDoException());
+		return flux.timeout(Mono.delay(duration)).onErrorReturn(fallback);
 	}
 }

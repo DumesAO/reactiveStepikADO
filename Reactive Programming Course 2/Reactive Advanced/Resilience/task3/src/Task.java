@@ -7,6 +7,6 @@ import reactor.util.retry.Retry;
 public class Task {
 
 	public static Publisher<String> retryOnError(Mono<String> publisher) {
-		return Mono.error(new ToDoException());
+		return publisher.retry();
 	}
 }

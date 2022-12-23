@@ -5,13 +5,13 @@ files:
   visible: true
   placeholders:
   - offset: 191
-    length: 32
+    length: 70
     placeholder_text: Flux.error(new ToDoException());
     initial_state:
       length: 32
       offset: 191
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: "upstream.window(duration)\n\t\t\t\t.flatMap(f -> f.reduce(\"\
       \", (s, next) -> s + next));"
@@ -40,5 +40,5 @@ files:
       implementation 'io.projectreactor:reactor-core'
     }
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1

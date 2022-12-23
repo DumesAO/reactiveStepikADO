@@ -12,7 +12,7 @@ files:
       offset: 198
     initialized_from_dependency: false
     selected: false
-    status: Solved
+    status: Unchecked
     encrypted_possible_answer: flux.collectList();
   text: "import java.util.List;\n\nimport reactor.core.publisher.Flux;\nimport reactor.core.publisher.Mono;\n\
     \npublic class Task {\n\n\tpublic static Mono<List<String>> transformToList(Flux<String>\

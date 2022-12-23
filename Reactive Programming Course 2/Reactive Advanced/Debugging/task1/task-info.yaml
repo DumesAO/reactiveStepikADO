@@ -15,54 +15,54 @@ files:
   visible: true
   placeholders:
   - offset: 429
-    length: 22
+    length: 29
     placeholder_text: /*Add BlockHound fix*/
     initial_state:
       length: 22
       offset: 429
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: new MyBlockHoundIntegration()
-  - offset: 456
-    length: 31
+  - offset: 463
+    length: 24
     placeholder_text: // 1) Add Better error printing
     initial_state:
       length: 31
       offset: 456
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: Hooks.onOperatorDebug();
   - offset: 506
-    length: 8
+    length: 20
     placeholder_text: // FIXME
     initial_state:
       length: 8
       offset: 506
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: .filter(a -> a != 0)
-  - offset: 591
-    length: 8
+  - offset: 576
+    length: 20
     placeholder_text: // FIXME
     initial_state:
       length: 8
       offset: 591
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: .filter(a -> a != 0)
-  - offset: 831
-    length: 29
+  - offset: 828
+    length: 223
     placeholder_text: // Add BlockHound Integration
     initial_state:
       length: 29
       offset: 831
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: "public static class MyBlockHoundIntegration implements\
       \ BlockHoundIntegration {\n\n\t\t@Override\n\t\tpublic void applyTo(BlockHound.Builder\
       \ builder) {\n\t\t\tbuilder.allowBlockingCallsInside(MyCallable.class.getName(),\
@@ -94,5 +94,8 @@ files:
     \   .expectSubscription()\n\t\t            .expectNextCount(10)\n\t\t        \
     \    .verifyComplete();\n\t}\n}"
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Fri, 23 Dec 2022 11:13:26 UTC
 record: -1

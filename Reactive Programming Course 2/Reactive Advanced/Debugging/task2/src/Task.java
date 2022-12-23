@@ -8,9 +8,8 @@ public class Task {
 
 	public static Flux<Long> loggerTask(Flux<Long> flux) {
 		return flux
-				// TODO add log here. Log only requests
+				.log()
 				.subscribeOn(Schedulers.parallel())
-				.publishOn(Schedulers.single());
-				// TODO add log here.
+				.publishOn(Schedulers.single()).log();
 	}
 }
